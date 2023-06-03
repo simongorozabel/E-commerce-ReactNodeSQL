@@ -1,0 +1,67 @@
+form {
+  width: 100%;
+  min-height: 100%;
+
+  font-size: 5em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  padding: 20px;
+}
+form div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 300px;
+  height: 100px;
+}
+form div label {
+  color: darkblue;
+}
+form input {
+  width: 310px;
+  height: 40px;
+
+  font-size: 0.4em;
+
+  border-radius: 10px;
+  border: 1px solid silver;
+}
+.inputPassword__container {
+  flex-direction: row;
+  width: 320px;
+}
+.inputPassword__container button {
+  background: transparent;
+  border-radius: 50%;
+}
+.bx {
+  font-size: 1.5em;
+}
+.loginButton__container {
+  width: 340px;
+  height: 80px;
+
+  margin-top: 10px;
+
+  border-radius: 50px;
+  border: 1px solid darkblue;
+
+  box-shadow: 0 0 10px 5px darkblue;
+  background-color: black;
+
+  cursor: pointer;
+
+  font-size: 1em;
+  color: darkblue;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
