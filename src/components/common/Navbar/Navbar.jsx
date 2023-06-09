@@ -6,19 +6,18 @@ import "./navBar.css";
 const Navbar = ({ updateCardVisible }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isLogged = useSelector((store) => {
-    store.auth.isLogged;
-  });
+  const isLogged = useSelector((store) => store.auth.isLogged);
+
+  console.log(isLogged);
 
   const userTo = isLogged ? "/profile" : "/login";
 
   const logout = () => {
     dispatch(reset());
-    navigate("/login");
+    navigate("/");
   };
 
   const login = () => {
-    dispatch(reset());
     navigate("/login");
   };
 
@@ -43,11 +42,15 @@ const Navbar = ({ updateCardVisible }) => {
           </NavLink>
         </div>
         {isLogged ? (
-          <button onClick={logout}>
+          <button className="navButton" onClick={logout}>
             <i className="bx bx-log-out"></i>
+            <span style={{ fontSize: "10px" }}>Log-out</span>
           </button>
         ) : (
-          <button onClick={login}>Login</button>
+          <button className="navButton" onClick={login}>
+            <i className="bx bx-log-in-circle"></i>
+            <span style={{ fontSize: "10px" }}>Log-in</span>
+          </button>
         )}
       </nav>
       <header className="navbar__header">

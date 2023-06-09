@@ -9,7 +9,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const from = location.state?.from;
-
+  console.log(isLogged);
   const handleLogin = (loginData) => {
     dispatch(startSessionThunk(loginData));
   };

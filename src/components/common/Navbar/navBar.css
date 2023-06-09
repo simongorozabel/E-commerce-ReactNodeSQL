@@ -31,3 +31,26 @@ nav h2 {
 nav div {
   display: flex;
 }
+.navButton {
+  width: 100%;
+  max-width: 200px;
+  border: transparent;
+  border-radius: 10px;
+
+  padding: 5px;
+  margin: 0 5px;
+  margin-left: 30px;
+  cursor: pointer;
+  transition: 0.25s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navButton:hover {
+  background-color: lightsalmon;
+  color: black;
+}
+.navButton .bx {
+  color: black;
+}
