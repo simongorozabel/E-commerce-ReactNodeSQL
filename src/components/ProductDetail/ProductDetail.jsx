@@ -1,12 +1,17 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./ProductDetail.css";
 import { useProductById } from "../../hooks/queries/useGetProductById";
+import { useAddProductToCart } from "../../hooks/queries/useAddProductToCart";
 
 import { useState } from "react";
+import { useSelector } from "react-redux";
 const ProductDetail = () => {
+  const navigate = useNavigate();
   const { productId } = useParams();
+  const { mutate } = useAddProductToCart();
   const { data, isLoading, isError, error } = useProductById(productId);
   const [quantity, setQuantity] = useState(1);
+  const isLogged = useSelector((store) => store.auth.isLogged);
 
   const increment = () => {
     const newQuantity = quantity + 1;
@@ -17,6 +22,15 @@ const ProductDetail = () => {
   const decrement = () => {
     const newQuantity = quantity - 1;
     if (newQuantity >= 1) setQuantity(newQuantity);
+  };
+
+  const handleAddCart = () => {
+    if (isLogged)
+      mutate({
+        quantity,
+        productId,
+      });
+    if (isLogged === false) navigate("/login");
   };
 
   if (isLoading) return <p>Loading product...</p>;
@@ -54,7 +68,7 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            <button className="addToCartButton">
+            <button onClick={handleAddCart} className="addToCartButton">
               Add to cart
               <i className="bx bxs-cart-add"></i>
             </button>

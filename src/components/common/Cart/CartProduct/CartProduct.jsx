@@ -4,9 +4,10 @@ const CartProduct = ({ cartProduct }) => {
   return (
     <article className="cartProduct__container">
       <div className="cartProduct__imageContainer">
-        <img src={cartProduct.product.images[0].url} alt="" />
-        <img src={cartProduct.product.images[1].url} alt="" />
-        <img src={cartProduct.product.images[2].url} alt="" />
+        <img
+          src={cartProduct.product.images[0].url}
+          alt={cartProduct.product.title}
+        />
       </div>
 
       <div className="cartProduct__details">

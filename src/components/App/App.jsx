@@ -12,13 +12,16 @@ const App = () => {
   };
   return (
     <>
-      <Navbar updateCardVisible={toggleCartVisibility} />
+      <Navbar updateCartVisible={toggleCartVisibility} />
 
       <main>
         <Outlet />
       </main>
 
-      <Cart isVisible={isCartVisible} />
+      <Cart
+        isVisible={isCartVisible}
+        updateCardVisible={toggleCartVisibility}
+      />
     </>
   );
 };

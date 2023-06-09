@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { reset } from "../../../store/slice/authSlice";
 import "./navBar.css";
 
-const Navbar = ({ updateCardVisible }) => {
+const Navbar = ({ updateCartVisible }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isLogged = useSelector((store) => store.auth.isLogged);
@@ -17,6 +17,15 @@ const Navbar = ({ updateCardVisible }) => {
 
   const login = () => {
     navigate("/login");
+  };
+
+  const handleCartClick = (e) => {
+    e.preventDefault();
+    if (isLogged === false) {
+      navigate("/login");
+    } else {
+      updateCartVisible(e);
+    }
   };
 
   return (
@@ -35,7 +44,7 @@ const Navbar = ({ updateCardVisible }) => {
           <button className="desktop__searchNavButton">
             <i className="bx bx-search-alt-2"></i>
           </button>
-          <NavLink onClick={updateCardVisible}>
+          <NavLink onClick={handleCartClick}>
             <i className="bx bx-shopping-bag"></i>
           </NavLink>
         </div>

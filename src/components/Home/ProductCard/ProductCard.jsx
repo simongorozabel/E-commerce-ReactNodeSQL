@@ -6,15 +6,13 @@ import { useGetCart } from "../../../hooks/queries/useGetCart";
 
 const ProductCard = ({ product }) => {
   const { mutate } = useAddProductToCart();
-  const { data, isLoading, isError } = useGetCart();
+  const { data } = useGetCart();
   const isLogged = useSelector((store) => store.auth.isLogged);
   const navigate = useNavigate();
 
   let isProductInCart = data?.some(
     (cartProduct) => cartProduct.productId === product.id
   );
-
-  const isAddVisible = !isLogged || Boolean(isProductInCart);
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -54,7 +52,11 @@ const ProductCard = ({ product }) => {
             <i className="bx bxs-cart-add"></i>
           </button>
         )}
-        {Boolean(isProductInCart) && <p>You have this product on Cart</p>}
+        {Boolean(isProductInCart) && (
+          <p style={{ padding: "20px", color: "#333" }}>
+            You have this product on Cart
+          </p>
+        )}
       </article>
     </Link>
   );

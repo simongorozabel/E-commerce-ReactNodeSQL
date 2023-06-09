@@ -2,7 +2,7 @@ import { useGetCart } from "../../../hooks/queries/useGetCart";
 import "./Cart.css";
 import CartProduct from "./CartProduct/CartProduct";
 
-const Cart = ({ isVisible }) => {
+const Cart = ({ isVisible, updateCardVisible }) => {
   const { data, isLoading, isError, error } = useGetCart();
 
   const toggleCart = isVisible
@@ -14,17 +14,28 @@ const Cart = ({ isVisible }) => {
   return (
     <div className={toggleCart}>
       <aside>
-        <h2
+        <div
           style={{
-            padding: "10px",
-            border: "2px solid black",
-            borderRadius: "5px",
-            backgroundColor: "lightblue",
-            fontWeight: "900",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+
+            width: "100%",
           }}
         >
-          Shopping Cart
-        </h2>
+          <h2
+            style={{
+              padding: "10px",
+              border: "2px solid black",
+              borderRadius: "5px",
+              backgroundColor: "lightblue",
+              fontWeight: "900",
+            }}
+          >
+            Shopping Cart
+          </h2>
+          <i onClick={updateCardVisible} className="bx bx-x-circle"></i>
+        </div>
         {!data.length && (
           <p style={{ margin: "20px" }}>Shopping Cart Empty...</p>
         )}
