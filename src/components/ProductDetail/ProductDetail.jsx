@@ -65,9 +65,12 @@ const ProductDetail = () => {
                 justifyContent: "center",
                 borderRadius: "5px",
                 cursor: "pointer",
+                color: "lightcoral",
+                fontSize: "25px",
               }}
             >
               Add to cart
+              <i className="bx bxs-cart-add"></i>
             </button>
           </div>
         </div>
