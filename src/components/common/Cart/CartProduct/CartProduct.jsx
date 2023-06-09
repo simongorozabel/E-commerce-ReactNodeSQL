@@ -3,21 +3,23 @@ const CartProduct = ({ cartProduct }) => {
   console.log(cartProduct.product);
   return (
     <article className="cartProduct__container">
-      <div>
+      <div className="cartProduct__imageContainer">
         <img src={cartProduct.product.images[0].url} alt="" />
         <img src={cartProduct.product.images[1].url} alt="" />
         <img src={cartProduct.product.images[2].url} alt="" />
       </div>
 
-      <div>
+      <div className="cartProduct__details">
         <header>
-          <h4>{cartProduct.product.title}</h4>
-          <button>TrashIcon</button>
+          <h4 style={{ fontSize: "14px", fontWeight: "900" }}>
+            {cartProduct.product.title}
+          </h4>
+          <button className="cartProduct__trashButton">
+            <i className="bx bx-trash"></i>
+          </button>
         </header>
-      </div>
 
-      <div>
-        <div>
+        <div className="cartProduct__changeCartButton">
           <button>-</button>
           <span>1</span>
           <button>+</button>

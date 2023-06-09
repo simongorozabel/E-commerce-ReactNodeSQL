@@ -14,7 +14,17 @@ const Cart = ({ isVisible }) => {
   return (
     <div className={toggleCart}>
       <aside>
-        <h2 style={{ margin: "5px" }}>Shopping Cart</h2>
+        <h2
+          style={{
+            padding: "10px",
+            border: "2px solid black",
+            borderRadius: "5px",
+            backgroundColor: "lightblue",
+            fontWeight: "900",
+          }}
+        >
+          Shopping Cart
+        </h2>
         {!data.length && (
           <p style={{ margin: "20px" }}>Shopping Cart Empty...</p>
         )}

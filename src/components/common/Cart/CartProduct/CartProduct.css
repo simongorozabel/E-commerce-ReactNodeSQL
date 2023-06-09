@@ -1,7 +1,82 @@
 .cartProduct__container {
   width: 100%;
+  background-color: whitesmoke;
+  border: 1px solid lightblue;
+  border-radius: 7px;
+  padding: 5px;
+}
+.cartProduct__imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px;
 }
 .cartProduct__container div img {
   max-width: 200px;
   max-height: 100px;
+  border-radius: 5px;
+}
+.cartProduct__details {
+  max-width: 300px;
+  min-width: 300px;
+  padding: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cartProduct__details header,
+.cartProduct__details .cartProduct__changeCartButton {
+  min-width: 50%;
+}
+.cartProduct__details header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.cartProduct__changeCartButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+.cartProduct__changeCartButton button {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 5px;
+
+  font-size: 20px;
+  font-weight: 900;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.25s;
+
+  background-color: lightblue;
+  border: 1px solid black;
+}
+.cartProduct__changeCartButton button:hover {
+  background-color: lightskyblue;
+}
+.cartProduct__trashButton {
+  background: transparent;
+  border: transparent;
+}
+.cartProduct__details .bx-trash {
+  color: crimson;
+  transition: 0.25s;
+}
+.cartProduct__details .bx-trash:hover {
+  color: darkred;
+  transform: scale(1.3);
 }

@@ -1,6 +1,6 @@
 .wrapper-cart {
   color: black;
-  background-color: lightcoral;
+  background-color: lightsalmon;
 
   width: 360px;
 
@@ -34,10 +34,11 @@
 .wrapper-cart ul {
   list-style: none;
 
-  width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 20px;
+
+  margin: 25px 0;
 }
