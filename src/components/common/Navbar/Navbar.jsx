@@ -8,8 +8,6 @@ const Navbar = ({ updateCardVisible }) => {
   const navigate = useNavigate();
   const isLogged = useSelector((store) => store.auth.isLogged);
 
-  console.log(isLogged);
-
   const userTo = isLogged ? "/profile" : "/login";
 
   const logout = () => {

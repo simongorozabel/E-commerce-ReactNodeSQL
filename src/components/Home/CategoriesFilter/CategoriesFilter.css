@@ -12,3 +12,7 @@ fieldset input,
 fieldset label {
   cursor: pointer;
 }
+.input-label__container {
+  display: flex;
+  gap: 5px;
+}

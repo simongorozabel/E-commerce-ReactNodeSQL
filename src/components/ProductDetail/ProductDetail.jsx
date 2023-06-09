@@ -37,7 +37,7 @@ const ProductDetail = () => {
           <div>
             <div style={{ margin: "20px" }}>
               <h3 style={{ color: "silver" }}>Price</h3>
-              <p style={{ fontSize: "25px", color: "lightblue" }}>
+              <p style={{ fontSize: "25px", color: "lightsalmon" }}>
                 <em>$ {data.price} USD</em>
               </p>
             </div>
@@ -47,28 +47,14 @@ const ProductDetail = () => {
                 <button className="productDetail__button" onClick={decrement}>
                   -
                 </button>
-                <span style={{ color: "lightcoral" }}>{quantity}</span>
+                <span style={{ color: "lightsalmon" }}>{quantity}</span>
                 <button onClick={increment} className="productDetail__button">
                   +
                 </button>
               </div>
             </div>
 
-            <button
-              style={{
-                borderColor: "lightcoral",
-                padding: "20px",
-                width: "250px",
-                height: "40px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                borderRadius: "5px",
-                cursor: "pointer",
-                color: "lightcoral",
-                fontSize: "25px",
-              }}
-            >
+            <button className="addToCartButton">
               Add to cart
               <i className="bx bxs-cart-add"></i>
             </button>
