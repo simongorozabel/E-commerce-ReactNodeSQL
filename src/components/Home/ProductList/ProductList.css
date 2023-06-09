@@ -1,0 +1,5 @@
+.productList__container li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

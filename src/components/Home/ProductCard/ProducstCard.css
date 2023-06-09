@@ -20,8 +20,8 @@
   transition: 0.25s;
 }
 .productCard__container:hover {
-  box-shadow: 0 0 10px 5px lightblue;
-  transform: translateY(-2px);
+  box-shadow: 0 0 15px 2px silver;
+  transform: translateY(-5px);
 }
 .productCard__container header {
   background-color: lightblue;
@@ -44,9 +44,10 @@
 .productCard__container header p {
   font-size: 10px;
   margin-bottom: 2px;
+  font-style: normal;
 }
 .productCard__container header h2 {
-  padding-left: 3px;
+  padding-left: 5px;
 }
 .productCard__img {
   position: absolute;
@@ -102,7 +103,8 @@
   font-style: normal;
 }
 .productCard__container .section p {
-  font-size: 28px;
+  font-size: 29px;
+  font-weight: 900;
 }
 .productCard__button {
   background: transparent;
@@ -118,6 +120,9 @@
 
   cursor: pointer;
   transition: 0.25s;
+}
+.productCard__button i {
+  color: lightsalmon;
 }
 .productCard__button:hover {
   box-shadow: 0 0 7px 3px lightsalmon;

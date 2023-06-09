@@ -4,23 +4,25 @@
 .home__container aside {
   background-color: white;
   position: fixed;
-  left: -180px;
+  left: -195px;
 
   width: 220px;
   height: 220px;
-
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 
   transition: 0.25s;
 
-  box-shadow: 10px 0 25px 1px lightcoral;
+  box-shadow: 10px 0 35px 5px lightsalmon;
 }
 .home__container aside:hover {
   left: 0px;
   z-index: 200;
 
-  box-shadow: 0 0 10px 1px lightcoral;
+  width: 220px;
+  height: 220px;
+
+  box-shadow: 0 0 10px 5px lightsalmon;
 }
 .productsContainer {
   background-color: black;

@@ -14,6 +14,7 @@ const CategoriesFilter = ({
 
   const addIdToList = (categoryId) => {
     const copyList = structuredClone(categoryIdList);
+
     copyList.push(categoryId);
 
     const copyWithoutRepeats = Array.from(new Set(copyList));
