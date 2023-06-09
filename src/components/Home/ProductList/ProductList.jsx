@@ -16,8 +16,6 @@ const ProductList = ({ categories, title }) => {
   const regex = new RegExp(title, "i");
   const titleFilter = data.filter((x) => regex.test(x.title));
 
-  console.log(firstFilter);
-
   if (!categories.length && !title) {
     return (
       <ul className="productList__container">

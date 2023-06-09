@@ -2,7 +2,8 @@
   color: black;
   background-color: lightcoral;
 
-  width: 300px;
+  width: 360px;
+
   height: 100%;
   padding: 15px;
 
@@ -16,7 +17,27 @@
 
   transition: 0.25s;
   transform: translateX(0);
+
+  overflow-y: scroll;
 }
 .wrapper-cart--hidden {
-  transform: translateX(300px);
+  transform: translateX(360px);
+}
+.wrapper-cart aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  font-size: 13px;
+}
+.wrapper-cart ul {
+  list-style: none;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

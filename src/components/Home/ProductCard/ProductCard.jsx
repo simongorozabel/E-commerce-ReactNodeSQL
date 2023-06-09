@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
   const handleAdd = (e) => {
     e.preventDefault();
 
-    if (!isLogged) {
+    if (isLogged === false) {
       navigate("/login");
     } else {
       mutate({
@@ -28,7 +28,6 @@ const ProductCard = ({ product }) => {
       });
     }
   };
-  console.log(product);
 
   return (
     <Link to={"/product/" + product.id}>
@@ -50,9 +49,12 @@ const ProductCard = ({ product }) => {
           </p>
         </div>
 
-        <button className="productCard__button" onClick={handleAdd}>
-          <i className="bx bxs-cart-add"></i>
-        </button>
+        {!isProductInCart && (
+          <button className="productCard__button" onClick={handleAdd}>
+            <i className="bx bxs-cart-add"></i>
+          </button>
+        )}
+        {Boolean(isProductInCart) && <p>You have this product on Cart</p>}
       </article>
     </Link>
   );

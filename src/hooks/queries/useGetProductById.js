@@ -6,6 +6,6 @@ export const useProductById = (productId) => {
     queryKey: ["products", productId],
     queryFn: () => getProductById(productId),
   });
-  console.log(query);
+
   return query;
 };

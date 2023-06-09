@@ -74,6 +74,7 @@
 .productDetail__button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 5px 1px lightsalmon;
+  color: lightsalmon;
 }
 .addToCartButton {
   padding: 7px 20px;
@@ -83,7 +84,7 @@
 
   font-weight: 900;
   font-size: 25px;
-  color: lightsalmon;
+  color: black;
 
   background-color: whitesmoke;
 
@@ -98,7 +99,11 @@
 .addToCartButton:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 5px 1px lightsalmon;
+  color: lightsalmon;
+}
+.addToCartButton:hover .bxs-cart-add {
+  color: lightsalmon;
 }
 button .bxs-cart-add {
-  color: lightsalmon;
+  color: black;
 }

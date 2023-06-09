@@ -1,10 +1,12 @@
+import "./CartProduct.css";
 const CartProduct = ({ cartProduct }) => {
+  console.log(cartProduct.product);
   return (
-    <article>
+    <article className="cartProduct__container">
       <div>
-        <img src={cartProduct.product[0].url} alt="" />
-        <img src={cartProduct.product[1].rl} alt="" />
-        <img src={cartProduct.product[2].rl} alt="" />
+        <img src={cartProduct.product.images[0].url} alt="" />
+        <img src={cartProduct.product.images[1].url} alt="" />
+        <img src={cartProduct.product.images[2].url} alt="" />
       </div>
 
       <div>

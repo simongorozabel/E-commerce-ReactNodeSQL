@@ -3,14 +3,14 @@ import { axiosInstance } from "../../api/axiosInstance";
 export const addProductToCart = async ({ token, quantity, productId }) => {
   try {
     const body = { quantity, productId };
-
+    console.log(token);
     const res = await axiosInstance.post("cart", body, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
 
-    return (await res).data;
+    return res.data;
   } catch (error) {
     if (error.response)
       throw typeof error.response.data === "string"

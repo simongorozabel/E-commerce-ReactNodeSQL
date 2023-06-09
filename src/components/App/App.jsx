@@ -6,7 +6,8 @@ import { useState } from "react";
 
 const App = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
-  const toggleCartVisibility = () => {
+  const toggleCartVisibility = (e) => {
+    e.preventDefault();
     setIsCartVisible(!isCartVisible);
   };
   return (

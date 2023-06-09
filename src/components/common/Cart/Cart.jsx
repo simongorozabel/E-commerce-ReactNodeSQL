@@ -10,12 +10,14 @@ const Cart = ({ isVisible }) => {
     : "wrapper-cart wrapper-cart--hidden";
 
   if (isLoading) return <p>Loading Cart...</p>;
-  if (isError) return <p>{error.message ?? "Could not load Car"}</p>;
+  if (isError) return <p>{error.message ?? "Could not load Cart"}</p>;
   return (
     <div className={toggleCart}>
       <aside>
-        <h2>Shopping Cart</h2>
-        {!data.length && <p>Shopping Cart Empty...</p>}
+        <h2 style={{ margin: "5px" }}>Shopping Cart</h2>
+        {!data.length && (
+          <p style={{ margin: "20px" }}>Shopping Cart Empty...</p>
+        )}
         {Boolean(data.length) && (
           <ul>
             {data.map((cartProduct) => (
