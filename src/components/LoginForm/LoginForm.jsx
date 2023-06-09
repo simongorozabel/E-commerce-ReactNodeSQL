@@ -53,7 +53,7 @@ const LoginForm = ({ onLogin }) => {
             type="button"
             onClick={() => setIsPasswordVisible(!isPasswordVisible)}
           >
-            <i className="bx bx-low-vision"></i>
+            <i className="bx bx-show"></i>
           </button>
         </div>
       </div>

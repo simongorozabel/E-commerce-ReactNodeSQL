@@ -4,6 +4,9 @@ import Login from "../components/Login/Login";
 import Purchase from "../components/Purchase.jsx/Purchase";
 import ProtectedRoute from "../components/common/ProtectedRoute/ProtectedRoute";
 import Profile from "../components/Profile/Profile";
+import Home from "../components/Home/Home";
+import { homeLoader } from "./loader/homeLoader";
+import ProductDetail from "../components/ProductDetail/ProductDetail";
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +18,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/",
-        element: <p>Product List</p>,
+        loader: homeLoader,
+        element: <Home />,
       },
       {
         path: "/purchase",
@@ -32,6 +36,10 @@ export const router = createBrowserRouter([
             <Profile />
           </ProtectedRoute>
         ),
+      },
+      {
+        path: "/product/:productId",
+        element: <ProductDetail />,
       },
     ],
   },

@@ -1,0 +1,22 @@
+.wrapper-cart {
+  color: black;
+  background-color: lightcoral;
+
+  width: 300px;
+  height: 100%;
+  padding: 15px;
+
+  border-left: 2px solid black;
+
+  position: fixed;
+  top: 48px;
+  right: 0;
+
+  z-index: 0;
+
+  transition: 0.25s;
+  transform: translateX(0);
+}
+.wrapper-cart--hidden {
+  transform: translateX(300px);
+}

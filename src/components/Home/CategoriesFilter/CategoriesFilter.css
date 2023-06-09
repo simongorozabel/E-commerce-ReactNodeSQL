@@ -1,0 +1,14 @@
+fieldset {
+  background-color: white;
+
+  padding: 10px;
+  margin: 20px;
+
+  font-size: 22px;
+
+  border-radius: 10px;
+}
+fieldset input,
+fieldset label {
+  cursor: pointer;
+}

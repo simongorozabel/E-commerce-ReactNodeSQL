@@ -1,0 +1,125 @@
+.productCard__container {
+  border: 5px solid lightblue;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  width: 320px;
+  height: 480px;
+
+  padding: 5px;
+
+  font-style: italic;
+  color: black;
+
+  border-radius: 10px;
+
+  transition: 0.25s;
+}
+.productCard__container:hover {
+  box-shadow: 0 0 10px 5px lightblue;
+  transform: translateY(-2px);
+}
+.productCard__container header {
+  background-color: lightblue;
+  margin-top: 190px;
+  margin-bottom: 40px;
+  padding: 10px;
+
+  border-radius: 5px;
+
+  height: 180px;
+  width: 100%;
+
+  font-size: 18px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.productCard__container header p {
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+.productCard__container header h2 {
+  padding-left: 3px;
+}
+.productCard__img {
+  position: absolute;
+  align-self: center;
+}
+.productCard__img img {
+  max-width: 135px;
+  max-height: 130px;
+
+  position: relative;
+  bottom: 165px;
+
+  cursor: zoom-in;
+
+  margin: 5px;
+}
+@keyframes imageChanging {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.productCard__img img:first-child {
+  transition: 0.25s;
+  animation: imageChanging 10s infinite;
+}
+@keyframes imageChanging2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.productCard__img img:last-child {
+  transition: 0.25s;
+  animation: imageChanging2 10s infinite;
+}
+.productCard__img img:hover {
+  transform: scale(1.2);
+}
+.productCard__container .section {
+  width: 80%;
+
+  font-style: normal;
+}
+.productCard__container .section p {
+  font-size: 28px;
+}
+.productCard__button {
+  background: transparent;
+  border: transparent;
+  border-radius: 100%;
+  min-width: 50px;
+  min-height: 50px;
+  font-size: 25px;
+
+  position: relative;
+  left: 120px;
+  bottom: 70px;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+.productCard__button:hover {
+  box-shadow: 0 0 7px 3px lightsalmon;
+  transform: scale(1.1);
+}
