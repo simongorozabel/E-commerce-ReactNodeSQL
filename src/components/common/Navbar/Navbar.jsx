@@ -34,8 +34,16 @@ const Navbar = ({ updateCartVisible }) => {
         <NavLink className="mobile__toggleNavavButton">
           <i className="bx bx-menu"></i>
         </NavLink>
-        <NavLink to={"/"}>
+        <NavLink
+          style={{
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none",
+          }}
+          to={"/"}
+        >
           <h2>TechStore</h2>
+          <i className="bx bxs-registered"></i>
         </NavLink>
         <div>
           <NavLink to={userTo}>
@@ -61,7 +69,7 @@ const Navbar = ({ updateCartVisible }) => {
         )}
       </nav>
       <header className="navbar__header">
-        <Link to="/">
+        <Link style={{ textDecoration: "none" }} to="/">
           <h1>Create the Future, Today.</h1>
         </Link>
       </header>

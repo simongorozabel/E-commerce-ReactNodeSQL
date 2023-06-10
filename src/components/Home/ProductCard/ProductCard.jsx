@@ -28,7 +28,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <Link to={"/product/" + product.id}>
+    <Link style={{ textDecoration: "none" }} to={"/product/" + product.id}>
       <article className="productCard__container">
         <header>
           <div className="productCard__img">
@@ -40,7 +40,7 @@ const ProductCard = ({ product }) => {
           <h2>{product.title}</h2>
         </header>
 
-        <div className="section">
+        <div style={{ textDecoration: "none" }} className="section">
           <h3>price</h3>
           <p>
             <em>$ {product.price} USD</em>
@@ -53,7 +53,12 @@ const ProductCard = ({ product }) => {
           </button>
         )}
         {Boolean(isProductInCart) && (
-          <p style={{ padding: "20px", color: "#333" }}>
+          <p
+            style={{
+              padding: "20px",
+              color: "#333",
+            }}
+          >
             You have this product on Cart
           </p>
         )}
