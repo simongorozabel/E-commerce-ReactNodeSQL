@@ -1,12 +1,11 @@
-fieldset {
-  background-color: white;
-
+.categoriesFilterFieldset {
   padding: 10px;
   margin: 20px;
-
+  width: 250px;
   font-size: 22px;
-
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 fieldset input,
 fieldset label {
@@ -15,4 +14,9 @@ fieldset label {
 .input-label__container {
   display: flex;
   gap: 5px;
+  transition: 0.25s;
+}
+
+.input-label__container:hover {
+  transform: scale(1.05) translate(5%, -2%);
 }

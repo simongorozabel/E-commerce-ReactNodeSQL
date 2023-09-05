@@ -25,6 +25,7 @@ const Home = () => {
   return (
     <div className="home__container">
       <aside>
+        ^
         <CategoriesFilter
           formId={formId}
           onChangeCategories={handleChangeCategories}
@@ -35,11 +36,12 @@ const Home = () => {
       <section className="productsContainer">
         <Form id={formId} ref={formRef}>
           <input
+            className="homeSearchInput"
             type="search"
             name="title"
             value={titleValue}
             onChange={(e) => setTitleValue(e.target.value)}
-            placeholder="what are you looking for?"
+            placeholder="Search..."
           />
         </Form>
 

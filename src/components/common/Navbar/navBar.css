@@ -1,56 +1,52 @@
-.navbar__header {
-  width: 100vw;
-  height: 250px;
-  background-color: lightblue;
-  color: black;
-
-  padding-top: 20px;
+.navBar {
+  background-color: #222;
+  opacity: 0.9;
+  border-bottom: solid 1px lightcoral;
+  box-shadow: 0 0 10px lightcoral;
 
   display: flex;
+  width: 100%;
+  height: 10vh;
+  padding: 3px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
+  position: fixed;
+  top: 0;
+}
+.navBar_navLink {
+  text-decoration: none;
+  padding: 0 7px;
+  color: lightblue;
   font-size: 25px;
 }
-.navbar__header h1 {
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  color: black;
-}
-nav {
-  background-color: black;
-
-  width: 100vw;
-
-  z-index: 100;
-}
-nav h2 {
-  color: silver;
-}
-nav div {
-  display: flex;
+.navBar_h2 {
+  color: lightcoral;
+  text-shadow: 0 0 2px #111, 0 0 2px crimson;
 }
 .navButton {
-  width: 100%;
-  max-width: 200px;
+  background-color: transparent;
   border: transparent;
-  border-radius: 10px;
-
-  padding: 5px;
-  margin: 0 5px;
-  margin-left: 30px;
+  padding: 0 7px;
+  color: lightcoral;
+  font-size: 42px;
   cursor: pointer;
   transition: 0.25s;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.navButton:hover {
-  background-color: lightsalmon;
-  color: black;
+.bx-shopping-bag,
+.bx-user {
+  font-size: 40px;
+  transition: 0.25s;
 }
-.navButton .bx {
-  color: black;
+.login:hover,
+.bx-shopping-bag:hover,
+.bx-user:hover {
+  transform: scale(1.05);
+  color: limegreen;
+  text-shadow: 0 0 10px #111;
+}
+.logout:hover {
+  transform: scale(0.95);
+  color: crimson;
+  text-shadow: 0 0 10px #111;
 }

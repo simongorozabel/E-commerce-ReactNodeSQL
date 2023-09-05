@@ -28,40 +28,39 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <Link style={{ textDecoration: "none" }} to={"/product/" + product.id}>
+    <Link className="link" to={"/product/" + product.id}>
       <article className="productCard__container">
         <header>
           <div className="productCard__img">
-            <img src={product.images[0].url} alt={product.title + "image1"} />
-            <img src={product.images[1].url} alt={product.title + "image1"} />
+            <img
+              width={"100%"}
+              src={product.images[0]?.url}
+              alt={product.title + "image1"}
+            />
           </div>
 
-          <p>{product.brand}</p>
-          <h2>{product.title}</h2>
+          <div className="nameProduct__container">
+            <h2>{product.title}</h2>
+            <p>{product.brand}</p>
+          </div>
         </header>
 
-        <div style={{ textDecoration: "none" }} className="section">
-          <h3>price</h3>
-          <p>
-            <em>$ {product.price} USD</em>
-          </p>
-        </div>
+        <div className="priceSection__container">
+          <h3>
+            <em>
+              $ {product.price} <code>USD</code>
+            </em>
+          </h3>
 
-        {!isProductInCart && (
-          <button className="productCard__button" onClick={handleAdd}>
-            <i className="bx bxs-cart-add"></i>
-          </button>
-        )}
-        {Boolean(isProductInCart) && (
-          <p
-            style={{
-              padding: "20px",
-              color: "#333",
-            }}
-          >
-            You have this product on Cart
-          </p>
-        )}
+          {!isProductInCart && (
+            <button className="productCardBuyButton" onClick={handleAdd}>
+              <i className="bx bxs-cart-add"></i> Add.
+            </button>
+          )}
+          {Boolean(isProductInCart) && (
+            <p className="isProductInCart">Product added.</p>
+          )}
+        </div>
       </article>
     </Link>
   );

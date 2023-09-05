@@ -37,44 +37,60 @@ const ProductDetail = () => {
   if (isError) return <p>{error.message ?? "Can't load product"}</p>;
   return (
     <section className="productDetail__container">
-      <section>
-        <div className="productDetail__img__container">
-          <img src={data.images[0].url} alt={data.title} />
-          <img src={data.images[1].url} alt={data.title} />
-          <img src={data.images[2].url} alt={data.title} />
+      <div className="productDetail__img__container">
+        {data?.images?.map((x) => {
+          return (
+            <img
+              className="productDetailImg"
+              key={x}
+              src={x.url}
+              alt={data.title}
+            />
+          );
+        })}
+      </div>
+
+      <div className="productDetail__detail__container">
+        <div className="productDetailHeader">
+          <h2>{data.title}</h2>
+          <h5>{data.brand}</h5>
+        </div>
+        <div className="productDetailDescription">
+          <p>{data?.description}</p>
         </div>
 
-        <div className="productDetail__detail__container">
-          <h3 style={{ color: "silver" }}>{data.brand}</h3>
-          <h2 style={{ color: "silver" }}>{data.title}</h2>
-          <p>{data.description}</p>
-          <div>
-            <div style={{ margin: "20px" }}>
-              <h3 style={{ color: "silver" }}>Price</h3>
-              <p style={{ fontSize: "25px", color: "lightsalmon" }}>
-                <em>$ {data.price} USD</em>
-              </p>
-            </div>
-            <div style={{ padding: "20px" }}>
-              <h3 style={{ color: "silver" }}>Quantity</h3>
-              <div className="productDetail__button__container">
-                <button className="productDetail__button" onClick={decrement}>
-                  -
-                </button>
-                <span style={{ color: "lightsalmon" }}>{quantity}</span>
-                <button onClick={increment} className="productDetail__button">
-                  +
-                </button>
-              </div>
-            </div>
+        <div className="productDetailPrice">
+          <p>
+            <em>
+              $ {data.price} <code>USD</code>
+            </em>
+          </p>
+        </div>
 
-            <button onClick={handleAddCart} className="addToCartButton">
-              Add to cart
-              <i className="bx bxs-cart-add"></i>
+        <div className="productDetailAddToCart">
+          <button onClick={handleAddCart} className="addToCartButton">
+            Add to Cart
+          </button>
+        </div>
+
+        <div className="productDetailQuantity">
+          <div className="productDetailTotal">
+            <h4>Total:</h4>
+            <em>$ {data.price * quantity}</em>
+            <code>USD</code>
+          </div>
+
+          <div className="productDetail__button__container">
+            <button className="productDetail__button" onClick={decrement}>
+              -
+            </button>
+            <div className="productDetail__quantity">{quantity}</div>
+            <button onClick={increment} className="productDetail__button">
+              +
             </button>
           </div>
         </div>
-      </section>
+      </div>
     </section>
   );
 };

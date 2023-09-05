@@ -1,5 +1,20 @@
-.productList__container li {
+.productList__container {
+  list-style: none;
+  padding: 20px;
+}
+.productList__loading {
+  width: 300px;
+  height: 350px;
+  margin: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: #2228;
+  color: #9998;
+
+  border-radius: 7px;
+  border: transparent;
+
+  font-size: 20px;
 }

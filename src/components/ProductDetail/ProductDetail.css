@@ -1,109 +1,153 @@
 .productDetail__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
   padding: 20px;
-
-  color: whitesmoke;
-}
-.productDetail__container section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-}
-.productDetail__img__container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.productDetail__img__container img {
-  max-height: 150px;
-  border-radius: 5px;
-  transition: 0.25s;
-  cursor: zoom-in;
-}
-.productDetail__img__container img:hover {
-  transform: scale(1.2);
+  font-size: 24px;
 }
 .productDetail__detail__container {
   padding: 20px;
-
+  background-color: #1118;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 2px 0.5px lightcoral, 0 0 1px black;
+}
+.productDetailHeader {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-
-  font-size: 20px;
+  justify-content: space-between;
+  color: lightcoral;
+  letter-spacing: 2px;
+  padding: 5px;
+  border-bottom: 1px solid lightcoral;
+  text-shadow: 0 0 3px crimson, 0 0 2px #111;
+}
+.productDetailDescription {
+  padding: 30px;
+  color: lightblue;
+}
+.productDetailPrice {
+  text-align: center;
+  color: lightblue;
+  opacity: 0.3;
+  padding: 5px;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+.productDetailQuantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+  margin-top: 12px;
+}
+.productDetail__img__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1118;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.productDetailImg {
+  width: 100%;
+  padding: 3px;
 }
 .productDetail__button__container {
+  background-color: #444;
+  width: 180px;
+  height: 70px;
+  padding: 5px;
+  border-radius: 4px;
   display: flex;
-  gap: 20px;
   align-items: center;
-  justify-content: center;
-  font-size: 30px;
-
-  margin: 20px;
+  justify-content: space-around;
+  color: lightblue;
 }
 .productDetail__button {
+  background-color: lightcoral;
+  color: #222;
+  border-radius: 4px;
+  border: 1px solid #111;
+  font-size: 37px;
+  font-weight: 900;
   width: 50px;
   height: 50px;
-  background-color: whitesmoke;
-  border: 2px lightsalmon solid;
-  color: black;
-  border-radius: 50%;
-
-  font-size: 30px;
-  font-weight: 900;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
-
   transition: 0.25s;
 }
 .productDetail__button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 5px 1px lightsalmon;
-  color: lightsalmon;
+  transform: scale(0.98);
+  box-shadow: 0 0 2px black;
+}
+.productDetail__quantity {
+  background-color: #222;
+  text-shadow: 0 0 1px white;
+  width: 35px;
+  height: 35px;
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.productDetailAddToCart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 9px;
 }
 .addToCartButton {
-  padding: 7px 20px;
-  width: 320px;
-  border: 2px solid lightsalmon;
-  border-radius: 20px;
+  color: crimson;
+  background-color: #fff;
+  padding: 5px;
+  font-size: 27px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  width: 100%;
+  height: 55px;
+  border-radius: 99px;
+  border: transparent;
+  text-shadow: 0 0 1px black;
 
-  font-weight: 900;
-  font-size: 25px;
-  color: black;
-
-  background-color: whitesmoke;
+  cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  cursor: pointer;
-
   transition: 0.25s;
+  margin-bottom: 20px;
 }
 .addToCartButton:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 5px 1px lightsalmon;
-  color: lightsalmon;
+  transform: scale(1.02) translate(0%, -4%);
+  box-shadow: 0 4px 1px #fff7;
 }
-.addToCartButton:hover .bxs-cart-add {
-  color: lightsalmon;
+
+.productDetailTotal {
+  padding: 5px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  color: lightblue;
+  text-shadow: 0 0 2px #111;
 }
-button .bxs-cart-add {
-  color: black;
+@media (min-width: 750px) {
+  .productDetail__img__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 700px;
+  }
+  .productDetailImg {
+    width: 50%;
+  }
+  .productDetailTotal {
+    letter-spacing: 2px;
+    padding: 10px;
+    width: 100px;
+  }
 }

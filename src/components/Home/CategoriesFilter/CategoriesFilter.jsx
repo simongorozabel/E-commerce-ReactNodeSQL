@@ -56,8 +56,8 @@ const CategoriesFilter = ({
     return <p>{error.message ?? "Not allowed to get categories."}</p>;
 
   return (
-    <fieldset form={formId}>
-      <legend>Categories</legend>
+    <fieldset className="categoriesFilterFieldset" form={formId}>
+      <legend>Filter by Categories</legend>
       <div className="input-label__container">
         <input
           checked={categoryIdList.length === 0}

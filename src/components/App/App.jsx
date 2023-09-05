@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "../common/Navbar/Navbar";
 import Cart from "../common/Cart/Cart";
 import { useState } from "react";
+import Footer from "../common/Footer/Footer";
 
 const App = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
@@ -14,7 +15,7 @@ const App = () => {
     <>
       <Navbar updateCartVisible={toggleCartVisibility} />
 
-      <main>
+      <main className="App__main">
         <Outlet />
       </main>
 
@@ -22,6 +23,8 @@ const App = () => {
         isVisible={isCartVisible}
         updateCardVisible={toggleCartVisibility}
       />
+
+      <Footer />
     </>
   );
 };

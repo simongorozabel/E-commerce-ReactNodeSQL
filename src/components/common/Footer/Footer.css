@@ -1,0 +1,30 @@
+.footerContainer {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #111;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 17px;
+}
+.footerContainer footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  padding: 40px;
+  color: lightblue;
+}
+.brand__footer {
+  font-size: 20px;
+  text-shadow: 0 0 1px black;
+  color: white;
+}
+.footerContainer a {
+  font-size: 18px;
+  color: white;
+  letter-spacing: 2px;
+}

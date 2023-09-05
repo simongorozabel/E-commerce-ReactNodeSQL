@@ -24,8 +24,8 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form className="form__container" onSubmit={handleSubmit}>
+      <div className="labelInput__container">
         <label htmlFor={nameId}>Email</label>
         <input
           type="email"
@@ -36,10 +36,9 @@ const LoginForm = ({ onLogin }) => {
           required
         />
       </div>
-
-      <div>
+      <div className="labelInput__container">
         <label htmlFor={passwordId}>Password</label>
-        <div className="inputPassword__container">
+        <div className="passwordInput__container">
           <input
             type={isPasswordVisible ? "text" : "password"}
             value={formData.password}
@@ -53,12 +52,14 @@ const LoginForm = ({ onLogin }) => {
             type="button"
             onClick={() => setIsPasswordVisible(!isPasswordVisible)}
           >
-            <i className="bx bx-show"></i>
+            <i className="bx  bx-show"></i>
           </button>
         </div>
       </div>
-
-      <button className="loginButton__container">Login</button>
+      <button className="form__button">Login</button>
+      <div className="signin__link">
+        not a user? <a href="/signin">Sign-in</a>
+      </div>
     </form>
   );
 };

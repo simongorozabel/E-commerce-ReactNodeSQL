@@ -16,10 +16,10 @@ const Login = () => {
   return (
     <div className="login__container">
       <section className="welcome__container">
-        <p>
-          <b style={{ color: "lightcoral" }}>Welcome!</b> Enter your email and
-          password to continue...
-        </p>
+        <div>
+          <h3 className="login__h3">Login to continue.</h3>
+        </div>
+        <div>Welcome, please insert your credentials.</div>
       </section>
       <section className="loginForm__container">
         <LoginForm onLogin={handleLogin} />

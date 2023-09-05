@@ -1,94 +1,134 @@
 .cartProduct__container {
-  width: 100%;
-  background-color: whitesmoke;
-  border: 1px solid lightblue;
-  border-radius: 7px;
-  padding: 5px;
+  background-color: #1118;
+  color: lightblue;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 .cartProduct__imageContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 5px;
+  position: relative;
 }
-.cartProduct__container div img {
-  max-width: 200px;
-  max-height: 120px;
-  border-radius: 5px;
-}
-.cartProduct__details {
-  max-width: 300px;
-  min-width: 300px;
-  padding: 5px;
+.cartProduct__trashButton {
+  position: absolute;
+  top: 0;
+  right: 0;
 
+  padding: 3px;
+
+  font-size: 45px;
+  background: #222;
+  border: transparent;
+  color: crimson;
+
+  border-bottom-left-radius: 20px;
+
+  transition: 0.25s;
+}
+.cartProduct__trashButton:hover {
+  padding: 5px;
+  cursor: pointer;
+}
+.bx-trash {
+  opacity: 0.5;
+}
+.cartProductHeader {
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid lightcoral;
 }
-.cartProduct__details header,
-.cartProduct__details .cartProduct__changeCartButton {
-  min-width: 50%;
+.cartProductTitle {
+  color: lightblue;
+  font-style: italic;
+  text-shadow: 0 0 1px #999;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
-.cartProduct__details header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 5px;
-}
-.cartProduct__changeCartButton {
+.cartProduct__details {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 5px;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 
-  font-size: 14px;
-  font-weight: 500;
+  box-shadow: 0px 2px 1px lightcoral;
+  position: relative;
 }
-.cartProduct__changeCartButton button {
-  width: 38px;
-  height: 38px;
+.updateCart__button {
+  position: absolute;
+  bottom: 4px;
+  left: 20px;
   padding: 5px;
-  border-radius: 50%;
 
-  font-size: 20px;
-  font-weight: 900;
+  background-color: limegreen;
+  border: transparent;
+  border-radius: 3px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-weight: bold;
+  text-shadow: 0 0 1px white;
 
   cursor: pointer;
   transition: 0.25s;
-
-  background-color: lightblue;
-  border: 1px solid black;
 }
-.cartProduct__changeCartButton button:hover {
-  background-color: lightskyblue;
+.updateCart__button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 1px green;
 }
-.cartProduct__trashButton {
-  background: transparent;
-  border: 1px solid crimson;
-  padding: 5px;
-  margin-bottom: 95px;
-  border-radius: 50%;
-
-  position: absolute;
-  right: 30px;
-}
-.cartProduct__trashButton .bx-trash {
-  color: crimson;
-  transition: 0.25s;
+.cartProductButtons {
+  background-color: #444;
   width: 100%;
-  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 4px;
 }
-.cartProduct__trashButton .bx-trash:hover {
-  color: darkred;
-  transform: scale(1.3);
+.cartProductButton {
+  background-color: lightcoral;
+  width: 50px;
+  height: 50px;
+  border-radius: 7px;
+  border: 1px solid #111;
+  font-size: 37px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.cartProductButton:hover {
+  transform: scale(0.98);
+  box-shadow: 0 0 2px black;
+}
+.cartProduct__quantity {
+  background-color: #222;
+  text-shadow: 0 0 1px white;
+  width: 35px;
+  height: 35px;
+  border-radius: 999px;
 
-  box-shadow: 0 0 5px 1px crimson;
-  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+.isLoading {
+  transition: 0.25s;
+  color: #444;
+  background-color: #999;
+  animation: fade-in 1s;
+}
+.isLoading:hover {
+  box-shadow: 0 2px 1px #999;
 }

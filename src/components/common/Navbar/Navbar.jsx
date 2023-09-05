@@ -30,49 +30,29 @@ const Navbar = ({ updateCartVisible }) => {
 
   return (
     <>
-      <nav>
-        <NavLink className="mobile__toggleNavavButton">
-          <i className="bx bx-menu"></i>
-        </NavLink>
-        <NavLink
-          style={{
-            display: "flex",
-            alignItems: "center",
-            textDecoration: "none",
-          }}
-          to={"/"}
-        >
-          <h2>TechStore</h2>
-          <i className="bx bxs-registered"></i>
+      <nav className="navBar">
+        <NavLink className="navBar_navLink" to={"/"}>
+          <h2 className="navBar_h2">BRAND</h2>
         </NavLink>
         <div>
-          <NavLink to={userTo}>
-            <i className="bx bx-user"></i>
+          <NavLink className="navBar_navLink" to={userTo}>
+            <i className={`bx bx-user ${isLogged ? "" : "logout"}`}></i>
           </NavLink>
-          <button className="desktop__searchNavButton">
-            <i className="bx bx-search-alt-2"></i>
-          </button>
-          <NavLink onClick={handleCartClick}>
-            <i className="bx bx-shopping-bag"></i>
+
+          <NavLink className="navBar_navLink" onClick={handleCartClick}>
+            <i className={`bx bx-shopping-bag ${isLogged ? "" : "logout"}`}></i>
           </NavLink>
         </div>
         {isLogged ? (
-          <button className="navButton" onClick={logout}>
+          <button className="navButton logout" onClick={logout}>
             <i className="bx bx-log-out"></i>
-            <span style={{ fontSize: "10px" }}>Log-out</span>
           </button>
         ) : (
-          <button className="navButton" onClick={login}>
+          <button className="navButton login" onClick={login}>
             <i className="bx bx-log-in-circle"></i>
-            <span style={{ fontSize: "10px" }}>Log-in</span>
           </button>
         )}
       </nav>
-      <header className="navbar__header">
-        <Link style={{ textDecoration: "none" }} to="/">
-          <h1>Create the Future, Today.</h1>
-        </Link>
-      </header>
     </>
   );
 };

@@ -1,7 +1,20 @@
+import { useState } from "react";
+import { useUpdateCart } from "../../../../hooks/queries/useUpdateCart";
+
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import "./CartProduct.css";
 const CartProduct = ({ cartProduct }) => {
+  const initialQuantity = Number(cartProduct.quantity);
+
+  const navigate = useNavigate();
+  const { isLoading, mutate } = useUpdateCart();
+  const [quantity, setQuantity] = useState(initialQuantity);
+  const isLogged = useSelector((store) => store.auth.isLogged);
+
   const increment = () => {
-    const newQuantity = cartProduct.quantity + 1;
+    const newQuantity = quantity + 1;
 
     const stock = 10;
 
@@ -9,58 +22,60 @@ const CartProduct = ({ cartProduct }) => {
   };
 
   const decrement = () => {
-    const newQuantity = cartProduct.quantity - 1;
+    const newQuantity = quantity - 1;
 
     if (newQuantity >= 1) setQuantity(newQuantity);
   };
+
+  const handleUpdate = () => {
+    if (isLogged === false) {
+      navigate("/login");
+    } else {
+      mutate({ cartProductId: cartProduct.id, newQuantity: quantity });
+    }
+  };
+
   return (
     <article className="cartProduct__container">
       <div className="cartProduct__imageContainer">
         <img
-          src={cartProduct.product.images[2].url}
-          alt={cartProduct.product.title}
+          width={"100%"}
+          src={cartProduct?.product?.images[0]?.url}
+          alt={cartProduct?.product?.title}
         />
         <button className="cartProduct__trashButton">
           <i className="bx bx-trash"></i>
         </button>
       </div>
 
+      <header className="cartProductHeader">
+        <h3 className="cartProductTitle">{cartProduct?.product?.title}</h3>
+        <h6 style={{ color: "#9999" }}>{cartProduct?.product?.brand}</h6>
+      </header>
+
       <div className="cartProduct__details">
-        <header>
-          <h4 style={{ fontSize: "14px", fontWeight: "900" }}>
-            {cartProduct.product.title}
-          </h4>
-        </header>
-
-        <div className="cartProduct__changeCartButton">
-          <button onClick={decrement}>-</button>
-          <span
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "2px",
-            }}
-          >
-            <em>Total:</em> <b>{cartProduct.quantity}</b>
-          </span>
-          <button onClick={increment}>+</button>
+        <div style={{ width: "200px" }}>
+          <b>Total:</b> <br /> $ {quantity * cartProduct.product.price}{" "}
+          <code>USD</code>
         </div>
-      </div>
-
-      <div
-        style={{
-          width: "100%",
-          textAlign: "center",
-          padding: "5px",
-          border: "1px solid #333",
-          borderRadius: "5px",
-        }}
-      >
-        <p>
-          <b>Total:</b> $ {cartProduct.quantity * cartProduct.product.price} USD
-        </p>
+        <div className="cartProductButtons">
+          <button className="cartProductButton" onClick={decrement}>
+            -
+          </button>
+          <div className="cartProduct__quantity">{quantity}</div>
+          <button className="cartProductButton" onClick={increment}>
+            +
+          </button>
+        </div>
+        {initialQuantity !== quantity && (
+          <button
+            onClick={handleUpdate}
+            disabled={isLoading}
+            className={`updateCart__button ${isLoading ? "isLoading" : ""}`}
+          >
+            Update Cart
+          </button>
+        )}
       </div>
     </article>
   );

@@ -1,28 +1,35 @@
 .login__container {
-  width: 100%;
-  height: 100vh;
+  box-shadow: 0 0 10px #9992, 0 0 5px lightcoral;
+  text-align: center;
+  font-size: 27px;
+  padding: 7px;
+  margin: 20px;
+  border-radius: 9px;
+
+  max-width: 350px;
+}
+.welcome__container {
+  background-color: #9992;
+  color: grey;
+  padding: 20px 10px;
+  border-radius: 10px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  border: 5px solid lightblue;
-  border-radius: 50px;
-  margin: 20px;
+  gap: 14px;
 }
-.welcome__container {
-  background-color: black;
-  box-shadow: 0 0 10px 5px silver;
-  color: lightblue;
 
-  padding: 2em 1em;
-  width: 80%;
-  border-radius: 100px;
-
-  font-size: 2em;
-  text-align: center;
+.login__h3 {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-shadow: 0 0 1px white;
+  color: lightcoral;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .loginForm__container {
-  color: silver;
+  background-color: #9992;
+  margin-top: 12px;
+  border-radius: 8px;
 }

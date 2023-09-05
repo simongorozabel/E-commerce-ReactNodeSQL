@@ -11,9 +11,10 @@ body {
   max-width: 100vw;
   margin: 0;
   padding: 0;
+  background-color: #333;
 }
 #root {
-  background-color: black;
+  background-color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,6 +22,4 @@ body {
 
   max-width: 100vw;
   min-height: 100vh;
-
-  padding: 5px;
 }

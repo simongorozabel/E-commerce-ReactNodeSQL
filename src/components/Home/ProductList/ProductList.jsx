@@ -6,7 +6,17 @@ const ProductList = ({ categories, title }) => {
   //useQuery is used to make GET requests
   const { data, isLoading, isError } = useGetProducts();
 
-  if (isLoading) return <p>Loading products...</p>;
+  if (isLoading)
+    return (
+      <>
+        <div className="productList__loading">Loading Products...</div>
+        <div className="productList__loading">Loading Products...</div>
+        <div className="productList__loading">Loading Products...</div>
+        <div className="productList__loading">Loading Products...</div>
+        <div className="productList__loading">Loading Products...</div>
+      </>
+    );
+
   if (isError) return <p>Opps, something went wrong.</p>;
 
   const firstFilter = data.filter((x) => x.categoryId == categories[0]);
