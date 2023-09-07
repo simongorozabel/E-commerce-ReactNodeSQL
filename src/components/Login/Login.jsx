@@ -17,9 +17,9 @@ const Login = () => {
     <div className="login__container">
       <section className="welcome__container">
         <div>
-          <h3 className="login__h3">Login to continue.</h3>
+          <h3 className="login__h3">Welcome.</h3>
         </div>
-        <div>Welcome, please insert your credentials.</div>
+        <div>please insert your credentials to continue.</div>
       </section>
       <section className="loginForm__container">
         <LoginForm onLogin={handleLogin} />

@@ -5,7 +5,10 @@ const Footer = () => {
     <div className="footerContainer">
       <footer>
         <em className="brand__footer">&copy; BRAND No rights reserved.</em>
-        <p>To have an e-commerce like this, get in touch wih me, my friend:</p>
+        <p>
+          Do you want an e-commerce like this? Get in contact with me via
+          LinkedIn, my friend:
+        </p>
         <code>
           <a
             target="_blank"

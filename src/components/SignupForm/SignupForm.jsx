@@ -1,11 +1,17 @@
 import { useId, useState } from "react";
-import "./LoginForm.css";
-const LoginForm = ({ onLogin }) => {
+import "./SignupForm.css";
+const SignUpForm = ({ onSignUp }) => {
   const nameId = useId();
   const passwordId = useId();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    password: "",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,13 +24,48 @@ const LoginForm = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.email || !formData.password) return;
+    if (!formData.email || !formData.password || !formData.phone) return;
 
-    onLogin(formData);
+    onSignUp(formData);
   };
 
   return (
     <form className="form__container" onSubmit={handleSubmit}>
+      <div className="labelInput__nameContainer">
+        <div className="labelInput__name">
+          <label htmlFor={nameId}>First Name</label>
+          <input
+            type="text"
+            value={formData.firstName}
+            onChange={handleChange}
+            id={nameId}
+            name="firstName"
+            required
+          />
+        </div>
+        <div className="labelInput__name">
+          <label htmlFor={nameId}>Last Name</label>
+          <input
+            type="text"
+            value={formData.lastName}
+            onChange={handleChange}
+            id={nameId}
+            name="lastName"
+            required
+          />
+        </div>
+      </div>
+      <div className="labelInput__container">
+        <label htmlFor={nameId}>Phone</label>
+        <input
+          type="tel"
+          value={formData.phone}
+          onChange={handleChange}
+          id={nameId}
+          name="phone"
+          required
+        />
+      </div>
       <div className="labelInput__container">
         <label htmlFor={nameId}>Email</label>
         <input
@@ -57,12 +98,12 @@ const LoginForm = ({ onLogin }) => {
           </button>
         </div>
       </div>
-      <button className="form__button">Login</button>
+      <button className="form__button">Sign-up</button>
       <div className="signin__link">
-        not a user? <a href="/signup">Sign-up</a>
+        already a user? <a href="/login">Login</a>
       </div>
     </form>
   );
 };
 
-export default LoginForm;
+export default SignUpForm;
